@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  logging-service:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../server:/server
+    command: >
+      sh -c "python app.py"
